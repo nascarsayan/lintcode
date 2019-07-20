@@ -17,8 +17,7 @@ public:
       if (nums.at(m) == target) {
         idx = m;
         break;
-      }
-      else if (nums.at(m) > target) {
+      } else if (nums.at(m) > target) {
         h = m - 1;
       } else {
         l = m + 1;
@@ -27,7 +26,7 @@ public:
     if (idx == -1)
       return idx;
     while (idx > 0 && nums[idx - 1] == target)
-      idx --;
+      idx--;
     return idx;
   }
 };

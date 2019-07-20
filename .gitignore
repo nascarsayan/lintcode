@@ -1,1 +1,7 @@
+*
+!.vscode
 .vscode/ipch
+!**/*.py
+!**/*.cpp
+!**/*.js
+!**/*.go
