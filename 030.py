@@ -4,14 +4,15 @@ Definition of Interval.
 
 """
 
-# class Interval(object):
 
-#   def __init__(self, start, end):
-#     self.start = start
-#     self.end = end
+class Interval(object):
 
-#   def __repr__(self):
-#     return "(%d, %d)" % (self.start, self.end)
+  def __init__(self, start, end):
+    self.start = start
+    self.end = end
+
+  def __repr__(self):
+    return "(%d, %d)" % (self.start, self.end)
 
 
 class Solution:

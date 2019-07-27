@@ -1,3 +1,10 @@
 {
-  "python.pythonPath": "/Users/nascarsayan/.pyenv/py3/bin/python"
+  "python.envFile": "${workspaceRoot}/.venv",
+  "python.pythonPath": "${workspaceRoot}/.venv/bin/python",
+  "files.associations": {
+    "vector": "cpp"
+  },
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true
 }
