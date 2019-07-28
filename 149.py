@@ -27,7 +27,7 @@ print(Solution().maxProfit([2, 1, 4, 5, 2, 9, 7]))
 '''
 Basic version
 '''
-# # Unlimited transactions total, at most 1 buy, sell 1 daay
+# # Unlimited transactions total, at most 1 buy, sell 1 day
 # class Solution:
 #   """
 #     @param prices: Given an integer array
