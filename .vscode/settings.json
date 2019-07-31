@@ -3,7 +3,10 @@
   "python.pythonPath": "${workspaceRoot}/.venv/bin/python",
   "files.associations": {
     "vector": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "utility": "cpp",
+    "iosfwd": "cpp",
+    "iterator": "cpp"
   },
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,

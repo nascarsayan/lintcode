@@ -1,26 +1,37 @@
 # https://www.lintcode.com/problem/permutations/
 
+
 class Solution:
 
   def __init__(self):
     self.perm = []
-  
-  def helper(self, nums, start):
-    if (start == len(nums) - 1):
+
+  def helper(self, nums, k):
+    if k == 1:
       self.perm.append(nums[:])
       return
-    for tarpos in range(start, len(nums)):
-      nums[start], nums[tarpos] = nums[tarpos], nums[start]
-      self.helper(nums, start + 1)
-      nums[start], nums[tarpos] = nums[tarpos], nums[start]
+    self.helper(nums, k - 1)
+    for i in range(k - 1):
+      if k % 2 == 0:
+        nums[i], nums[k - 1] = nums[k - 1], nums[i]
+      else:
+        nums[0], nums[k - 1] = nums[k - 1], nums[0]
+      self.helper(nums, k - 1)
 
   """
   @param: nums: A list of integers.
   @return: A list of permutations.
   """
+
   def permute(self, nums):
     # write your code here
-    if (len(nums) == 0):
+    size = len(nums)
+    if (size == 0):
       return [[]]
-    self.helper(nums, 0)
+    if size == 1:
+      return [nums]
+    self.helper(nums, size)
     return self.perm
+
+
+# print(Solution().permute([1, 2, 3, 4]))
