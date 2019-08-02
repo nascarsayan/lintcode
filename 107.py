@@ -10,15 +10,46 @@ class Solution:
     ls = len(s)
     c = 0
     dp = [False] * ls + [True]
+    matched = []
     for st in range(ls - 1, -1, -1):
-      for fl in range(st, ls):
+      if s[st:] in dic:
+        dp[st] = True
+        matched.insert(0, st)
+        continue
+      for fl in matched:
         c += 1
-        if s[st:fl + 1] in dic and dp[fl + 1]:
+        if s[st:fl] in dic:
           dp[st] = True
+          matched.insert(0, st)
           break
     print(c)
     return dp[0]
 
+
+# class Solution:
+
+#   def wordBreak(self, s, wordDict):
+#     """
+#         :type s: str
+#         :type wordDict: List[str]
+#         :rtype: bool
+#         """
+#     n = len(s)
+#     wordDict = set(wordDict)
+
+#     dp = [False] * (n + 1)
+#     dp[0] = True
+
+#     for i in range(1, n + 1):
+#       if s[0:i] in wordDict:
+#         dp[i] = True
+#         continue
+#       for j in range(1, i):
+#         if dp[j]:
+#           if s[j:i] in wordDict:
+#             dp[i] = True
+#             break
+#     return dp[-1]
 
 # Bad recursive soution
 # class Solution:
