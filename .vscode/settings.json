@@ -6,7 +6,8 @@
     "algorithm": "cpp",
     "utility": "cpp",
     "iosfwd": "cpp",
-    "iterator": "cpp"
+    "iterator": "cpp",
+    "unordered_set": "cpp"
   },
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
