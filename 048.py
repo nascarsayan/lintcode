@@ -1,3 +1,6 @@
+from collections import defaultdict
+
+
 class Solution:
   """
     @param nums: A list of integers
@@ -7,20 +10,10 @@ class Solution:
 
   def majorityNumber(self, nums, k):
     # write your code here
-    l = len(nums)
-    if l == 0:
-      return None
-    if l < k:
-      return nums[0]
-    nums.sort()
-    ele = None
-    cnt = 0
+    cnt = defaultdict(int)
+    size = len(nums)
     for num in nums:
-      if num != ele:
-        ele = num
-        cnt = 1
-      else:
-        cnt += 1
-        if cnt > l // k:
-          return num
+      cnt[num] += 1
+      if cnt[num] > size // k:
+        return num
     return None
