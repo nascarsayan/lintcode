@@ -1,5 +1,8 @@
 # https://www.lintcode.com/problem/ugly-number-ii/
-# TODO : subete
+
+import heapq
+
+
 class Solution:
   """
   @param n: An integer
@@ -8,28 +11,17 @@ class Solution:
 
   def nthUglyNumber(self, n):
     # write your code here
-    if (n < 1):
-      return None
-    if (n == 1):
+    facs = [2, 3, 5]
+    if n == 1:
       return 1
-    f = {2: 2, 3: 3, 5: 5}
-    ptr = 2
-    for idx in range(3, n + 1):
-      if ptr == 2:
-        f[2] += 2
-        if f[2] > f[3]:
-          ptr = 3
-      elif ptr == 3:
-        f[3] += 3
-        if f[3] > f[5]:
-          ptr = 5
-        else:
-          ptr = 2
-      else:
-        f[5] += 5
-        ptr = 2
-      print(f[ptr])
-    return f[ptr]
+    hp = facs[:]
+    nth = None
+    for i in range(1, n):
+      nth = heapq.heappop(hp)
+      for fac in facs:
+        if nth * fac not in hp:
+          heapq.heappush(hp, nth * fac)
+    return nth
 
 
 print(Solution().nthUglyNumber(9))
