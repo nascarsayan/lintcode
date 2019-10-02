@@ -1,1 +1,1 @@
-len(nums) + 1
+ and end[fl] != 'R'

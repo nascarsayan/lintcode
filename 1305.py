@@ -22,17 +22,18 @@ class Solution:
     wd = []
     while (num > 0):
       uval = num % 100
-      kwd = []
-      if uval < 20:
-        kwd = [umark[uval]] + kwd
-      else:
-        kwd = [dmark[uval // 10]] + [umark[uval % 10]] + kwd
-      dval = (num // 100) % 10
-      if dval > 0:
-        kwd = [umark[dval]] + ['Hundred'] + kwd
-      kwd += [kmark[kcurr]]
+      if uval > 0:
+        kwd = []
+        if uval < 20:
+          kwd = [umark[uval]] + kwd
+        else:
+          kwd = [dmark[uval // 10]] + [umark[uval % 10]] + kwd
+        dval = (num // 100) % 10
+        if dval > 0:
+          kwd = [umark[dval]] + ['Hundred'] + kwd
+        kwd += [kmark[kcurr]]
+        wd = kwd + wd
       kcurr += 1
-      wd = kwd + wd
       num = num // 1000
     return ' '.join(list(filter(lambda x: len(x) > 0, wd)))
 

@@ -5,3 +5,5 @@
 !**/*.cpp
 !**/*.js
 !**/*.go
+**/tempCode*.py
+wr.cpp
